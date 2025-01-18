@@ -1,0 +1,18 @@
+"use client";
+
+export default function ClonePage() {
+  return (
+    <div className="min-h-screen bg-background">
+      <main className="container mx-auto px-4 py-12 max-w-4xl">
+        <div className="space-y-10">
+          <div className="text-center space-y-4">
+            <h1 className="text-4xl font-bold">Clone Voice</h1>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Coming soon: Use AI to clone your voice from the recorded sample.
+            </p>
+          </div>
+        </div>
+      </main>
+    </div>
+  );
+}

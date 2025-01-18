@@ -1,0 +1,72 @@
+Here’s an updated version of your clone rules file with a new section specific to your project for recording family history and wisdom. Enhancements include considerations for LLM agent support and additional project-specific guidance:
+
+Approach
+	•	Expert full-stack developer guidance
+	•	Accurate, concise, and factual TypeScript solutions
+	•	Transparency in applying rules
+
+Code Style
+	•	Technical TypeScript; functional programming
+	•	DRY, modular, and separation of concerns
+	•	Monorepo: server, client, shared directories
+	•	Do not create long files they are harder for you to manage as an LLM.
+	•	Break down the long pages in seperation jof concerns -  smaller, more focused modules:
+
+Tech Stack
+	•	React, TypeScript, Next,.JS, Tailwind CSS, Radix, Shadcn
+    •	Lint and Prettier for code quality
+	•	NodeJS
+
+Deployment
+	•	CI/CD pipelines via GitHub Actions; deploy on Heroku
+
+UI/Styling
+	•	Tailwind CSS for styling; Shadcn UI + Radix for components
+	•	Atomic design principles
+
+Naming Conventions
+	•	Named exports for components/utilities
+	•	PascalCase: component files (e.g., FamilyStoryForm.tsx)
+	•	camelCase: utilities (e.g., storyProcessor.ts)
+
+TypeScript
+	•	Strict usage: interfaces > enums; prefer const objects
+	•	Explicit return types; strict message passing
+	•	Type-safe APIs for LLM interaction (e.g., OpenAPI spec or JSON schema validation)
+
+State Management
+	•	React Context for global state
+	•	Proper cleanup in useEffect
+
+Formatting/Syntax
+	•	Pure functions: function keyword
+	•	Declarative JSX
+	•	Use ESLint, Prettier, TypeScript strict mode
+
+Error Handling
+	•	Error boundaries
+	•	Centralized logging (e.g., Sentry)
+	•	Graceful network failure handling
+
+Security
+	•	Content Security Policy
+	•	Input sanitization
+	•	Secure env variable handling
+
+Accessibility
+	•	ARIA roles, Axe/Lighthouse for testing
+	•	User-friendly forms for all family members, including elderly users
+
+Git Usage
+	•	Commit prefixes: fix, feat, perf, docs, style, refactor, test, chore
+	•	Maintain .gitignore
+
+
+Project-Specific: 
+
+- Prototype web app to test voice cloning
+- Use ElevenLabs for voice cloning
+- Test in your browser for layout and consile errors
+- Remember you do not have a voice. Test voice features with the user.
+- Mic usage: Use local microphone and avoid any virtual or remote audio devices.
+
