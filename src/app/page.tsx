@@ -51,12 +51,10 @@ export default function HomePage() {
       description: "Click Start Recording when you're ready to begin.",
     });
 
-    // Reset managers
     micManagerRef.current?.cleanup();
     recordingManagerRef.current?.cleanup();
     scrollManagerRef.current?.cleanup();
 
-    // Reinitialize microphone
     initializeMicrophone();
   }, []);
 
@@ -270,16 +268,17 @@ export default function HomePage() {
           </div>
 
           {showSampleText && (
-            <div className="bg-card rounded-lg p-8 shadow-sm border border-border">
+            <div className="bg-card rounded-lg p-8 shadow-lg border border-border transition-all duration-300">
               <h2 className="text-xl font-semibold mb-6">
                 Sample Text:
               </h2>
               <div
                 ref={sampleTextRef}
-                className="prose dark:prose-invert max-h-[300px] overflow-y-auto rounded-md bg-muted/50 p-6 hide-scrollbar"
+                className="prose dark:prose-invert max-h-[300px] overflow-y-auto rounded-md bg-muted/30 p-8 leading-relaxed tracking-wide hide-scrollbar transition-all duration-300"
+                style={{ fontSize: "1.125rem" }}
               >
                 {SAMPLE_TEXT.split("\n\n").map((paragraph, index) => (
-                  <p key={index} className="mb-4 last:mb-0">
+                  <p key={index} className="mb-6 last:mb-0">
                     {paragraph}
                   </p>
                 ))}

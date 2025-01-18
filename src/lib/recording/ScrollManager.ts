@@ -53,13 +53,13 @@ export class ScrollManager {
       // Update scroll position using easing function
       if (elapsed < scrollDuration) {
         // Use custom easing for smoother scrolling
-        const easeProgress = this.easeInOutCubic(progressPercent);
+        const easeProgress = this.easeInOutQuart(progressPercent);
         const targetScrollPosition = Math.round(easeProgress * totalScrollHeight);
 
-        // Apply smooth interpolation between current and target position
+        // Apply enhanced smooth interpolation
         const scrollDiff = targetScrollPosition - this.lastScrollPosition;
-        if (Math.abs(scrollDiff) > 0.5) {
-          const smoothedPosition = this.lastScrollPosition + scrollDiff * 0.1;
+        if (Math.abs(scrollDiff) > 0.1) {
+          const smoothedPosition = this.lastScrollPosition + scrollDiff * 0.05;
           this.element.scrollTop = smoothedPosition;
           this.lastScrollPosition = smoothedPosition;
         }
@@ -80,11 +80,11 @@ export class ScrollManager {
     this.scrollInterval = requestAnimationFrame(scroll);
   }
 
-  // Cubic easing for smoother acceleration and deceleration
-  private easeInOutCubic(t: number): number {
+  // Quartic easing for extra smooth acceleration and deceleration
+  private easeInOutQuart(t: number): number {
     return t < 0.5
-      ? 4 * t * t * t
-      : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      ? 8 * t * t * t * t
+      : 1 - Math.pow(-2 * t + 2, 4) / 2;
   }
 
   stopAutoScroll() {

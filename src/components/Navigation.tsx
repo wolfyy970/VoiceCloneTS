@@ -29,20 +29,22 @@ export function Navigation() {
   return (
     <nav className="border-b">
       <div className="container mx-auto px-4">
-        <div className="flex h-16 items-center space-x-4">
-          {links.map(({ href, label, icon: Icon }) => (
-            <Link
-              key={href}
-              href={href}
-              className={cn(
-                "nav-link",
-                pathname === href && "active"
-              )}
-            >
-              <Icon className="h-4 w-4" />
-              <span>{label}</span>
-            </Link>
-          ))}
+        <div className="flex h-16 items-center justify-center">
+          <div className="flex space-x-6">
+            {links.map(({ href, label, icon: Icon }) => (
+              <Link
+                key={href}
+                href={href}
+                className={cn(
+                  "nav-link transition-all duration-300 ease-in-out",
+                  pathname === href && "active"
+                )}
+              >
+                <Icon className="h-4 w-4" />
+                <span>{label}</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </nav>
